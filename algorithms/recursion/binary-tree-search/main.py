@@ -12,8 +12,9 @@ def main():
     size = comm.Get_size()
 
     # Running the parallel binary tree search algorithm
+    search_element = 13
     try:
-        parallel_tree_search(root, 11, rank, size)
+        parallel_tree_search(root, search_element, rank, size)
     except:
         pass
 
