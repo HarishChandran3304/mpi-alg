@@ -1,1 +1,3 @@
-# Recursion / Dynamic Programming Algorithms
+# Recursion Algorithms
+* Binary Tree Traversal
+* Binary Tree Search
