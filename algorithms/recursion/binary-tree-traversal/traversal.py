@@ -1,5 +1,7 @@
 # Recursive traversal of binary tree
 def tree_traversal(root):
+    if not root:
+        return
     print(root.value)
     if root.left:
         tree_traversal(root.left)
