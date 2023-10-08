@@ -31,10 +31,10 @@ $ pip install -r requirements.txt
 
 7) Navigate to the directory of the algorithm you want to run:
 ```bash
-$ cd algorithms/<algorithm-type>
+$ cd algorithms/<algorithm-type>/algorithm-name/
 ```
 
 8) Run the algorithm with the recommended number of processes:
 ```bash
-$ mpiexec -n <number-of-processes> python3 <algorithm-name>.py
+$ mpiexec -n <number-of-processes> python3 main.py
 ```
