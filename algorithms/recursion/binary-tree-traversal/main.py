@@ -1,5 +1,5 @@
 # Imports
-from example_binary_tree import root
+from algorithms.recursion.example_binary_tree import root
 from traversal import parallel_tree_traversal
 from mpi4py import MPI
 
