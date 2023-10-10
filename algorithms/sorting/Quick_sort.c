@@ -5,9 +5,10 @@
 #include <stdbool.h> 
 #define SIZE 1000
 
-//Setting variables and functions
+//MPI timer var
 double start_timer;
 double finish_timer;
+//Merge Function
 void merge (int *first, int *second, int *result, int first_size, int second_size){
   int i = 0;
   int j = 0;
@@ -41,6 +42,7 @@ void merge (int *first, int *second, int *result, int first_size, int second_siz
   }
 }
 
+//Partition Function
 int partitionArray (int *arr, int low, int high){
     int middle = floor ((low + high) / 2);
     int pivot = arr[middle];
@@ -63,6 +65,7 @@ int partitionArray (int *arr, int low, int high){
     return (i + 1);
 }
 
+//Quicksort function
 void quicksort (int *number, int first, int last){
     if (first < last){
         int pivot_index = partitionArray (number, first, last);
@@ -71,7 +74,7 @@ void quicksort (int *number, int first, int last){
     }
 }
 
-
+//Main function
 int main (int argc, char *argv[]){
     int *unsorted_array = (int *) malloc (SIZE * sizeof (int));
     int *result = (int *) malloc (SIZE * sizeof (int));
@@ -79,10 +82,15 @@ int main (int argc, char *argv[]){
     int array_size = SIZE;
     int size, rank;
     int sub_array_size;
+
+//Setting up MPI process
     MPI_Status status;
     MPI_Init (&argc, &argv);
-    MPI_Comm_rank (MPI_COMM_WORLD, &rank);
-    MPI_Comm_size (MPI_COMM_WORLD, &size);
+    MPI_Comm_rank (MPI_COMM_WORLD, &rank); //Returning process rank
+    MPI_Comm_size (MPI_COMM_WORLD, &size); //Returning total number of processes
+//MPI_COMM_WORLD is the default communicator, contains all processes available for use
+
+//Generating 1000 random numbers
     if (rank == 0){
         printf ("Unsorted array: ");
         int j = 0;
@@ -113,7 +121,7 @@ int main (int argc, char *argv[]){
                 if (i > 0){
                     int temp_sub_array[sub_array_size];
                     MPI_Recv (temp_sub_array, sub_array_size, MPI_INT, i, 777,
-                    MPI_COMM_WORLD, &status);
+                    MPI_COMM_WORLD, &status); //checks overflow error
                     int j;
                     int temp_result[i * sub_array_size];
                     for (j = 0; j < i * sub_array_size; j++){
