@@ -40,8 +40,8 @@ $ mpiexec -n <number-of-processes> python3 main.py
 ```
 
 
-##Teammates
+## Teammates
 
-Arjun Bade
-Farhan Shali K.
+Arjun Bade\n
+Farhan Shali K.\n
 Harish Chandran
