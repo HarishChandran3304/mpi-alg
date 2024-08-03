@@ -38,3 +38,10 @@ $ cd algorithms/<algorithm-type>/algorithm-name/
 ```bash
 $ mpiexec -n <number-of-processes> python3 main.py
 ```
+
+
+##Teammates
+
+Arjun Bade
+Farhan Shali K.
+Harish Chandran
