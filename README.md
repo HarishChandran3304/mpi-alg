@@ -42,6 +42,8 @@ $ mpiexec -n <number-of-processes> python3 main.py
 
 ## Teammates
 
-Arjun Bade\n
-Farhan Shali K.\n
+Arjun Bade
+
+Farhan Shali K.
+
 Harish Chandran
